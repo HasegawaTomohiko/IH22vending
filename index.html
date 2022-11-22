@@ -1,11 +1,168 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset = "UTF-8">
-        <title>Untitled</title>
-        <script type = "text/javascript" src = "main.js"></script>
-        <link rel="stylesheet" href = "css/style.css">
-    </head>
-    <body>
-    </body>
+
+  <head>
+
+    <meta charset="utf-8">
+
+    <title>Prototype/ウェザーニュース</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css">
+    <link rel="stylesheet" type="text/css" href="css/news.css">
+
+  </head>
+<!-- 上に文字 -->
+  <header>
+    <a class="title">ウェザーニュース </a>
+  </header>
+
+  <body>
+
+    <a href="content.html">
+    <div class="weather">
+
+      <div class="today">
+
+        <div class="weather-icon">
+
+          <i class="wi wi-day-sunny"></i>
+
+        </div>
+
+        <div class="weather-detail">
+
+          <div id="current_date">9/12</div><!-- java date関数でやる -->
+          <div id="current_time">　00:00</div> <!-- 現在時刻-->
+          <div id="location">　愛知県　名古屋市</div>
+          <div class="weather-name">晴れ　</div>
+          <!-- 現在の天気入れるやつ -->
+          <div class="current-temperature">22°</div>
+<!-- 今の気温 -->
+
+
+          <div class="temperature">
+
+            <span>　27°</span>/<span>15°</span>
+
+          </div>
+
+          <!-- 雨確立 難しかったら消す -->
+          <div class="rain-percent">降水確率　5%</div>
+
+        </div>
+
+      </div>
+
+      <ul class="day">
+
+        <li class="time">
+
+          <div class="day-of-the-week">6:00</div>
+<!-- 時刻 6字から21字まで3時間ずつ -->
+          <div class="weather-icon">
+<!-- 天気のアイコン↓ -->
+            <i class="wi wi-day-sunny"></i>
+
+          </div>
+<!-- 気温 -->
+          <div class="temperature">
+
+            <span>25°</span>/<span>21°</span>
+
+          </div>
+
+        </li>
+
+        <li class="time">
+
+          <div class="day-of-the-week">9:00</div>
+
+          <div class="weather-icon">
+
+            <i class="wi wi-cloud"></i>
+
+          </div>
+
+          <div class="temperature">
+
+            <span>22°</span>/<span>18°</span>
+
+          </div>
+
+        </li>
+
+        <li class="time">
+
+          <div class="day-of-the-week">12:00</div>
+
+          <div class="weather-icon">
+
+            <i class="wi wi-day-rain"></i>
+
+          </div>
+
+          <div class="temperature">
+
+            <span>17°</span>/<span>12°</span>
+
+          </div>
+
+        </li>
+
+        <li class="time">
+
+          <div class="day-of-the-week">15:00</div>
+
+          <div class="weather-icon">
+
+            <i class="wi wi-rain"></i>
+
+          </div>
+
+          <div class="temperature">
+
+            <span>15°</span>/<span>10°</span>
+
+          </div>
+
+        </li>
+
+        <li class="time">
+
+          <div class="day-of-the-week">18:00</div>
+
+          <div class="weather-icon">
+
+            <i class="wi wi-day-cloudy"></i>
+
+          </div>      
+
+          <div class="temperature">
+
+            <span>15°</span>/<span>12°</span>
+
+          </div>
+
+        </li>
+
+        <li class="time">
+
+          <div class="day-of-the-week">21:00</div>
+
+          <div class="weather-icon">
+
+            <i class="wi wi-day-sunny"></i>
+
+          </div>
+
+          <div class="temperature">
+
+            <span>28°</span>/<span>21°</span>
+
+          </div>
+        </li>
+      </ul>
+    </div>
+  </a>
+  </body>
 </html>

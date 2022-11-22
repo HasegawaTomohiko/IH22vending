@@ -1,0 +1,41 @@
+@charset "utf-8";
+
+
+*{
+  color: #6091d3;
+}
+#wrap{
+  position:absolute;
+  width:80vw;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+}
+
+#wrap h1{
+  font-size: 2.5rem;
+  text-align: center;
+  margin:1.5rem 0.5rem 1.5rem 0.5rem;
+}
+
+#select{
+  display: flex;
+}
+#select #back{
+  margin:1rem 1.5rem;
+  padding:1rem;
+  font-size:2rem;
+  text-align: center;
+  width:100vw;
+  border:solid 3px #6091d3;
+  border-radius: 10px;
+}
+#select #buy{
+  margin:1rem 1.5rem;
+  padding:1rem;
+  font-size:2rem;
+  text-align: center;
+  width:100vw;
+  border:solid 3px #6091d3;
+  border-radius: 10px;
+}

@@ -1,0 +1,12 @@
+@charset "utf-8";
+
+body div{
+  font-size: 3rem;
+  text-align: center;
+  color: #6091d3;
+  bottom: 20px;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+}

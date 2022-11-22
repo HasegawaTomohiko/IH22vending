@@ -1,0 +1,11 @@
+@charset "utf-8";
+
+#wrap{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  font-size: 3rem;
+  text-align: center;
+  color: #6091d3;
+}

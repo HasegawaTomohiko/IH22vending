@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
+
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP');
+/* フォント */
+
+header {
+
+  padding: 15px;
+}
+
+a {
+  color: #6091d3;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 50px;
+  text-align: center;
+  margin: 2em ;
+}
+
+
+body {
+  margin: 0;
+  padding: auto;
+}
+
+.weather {
+  /* 悩む */
+  /* font-family: 'Open Sans Condensed', sans-serif;
+  background: linear-gradient(to bottom right, #04BACC, #68d5e0);
+  width: 100%;
+  font-size: 21px;
+  line-height: 1.5;
+  color: #fff; */
+      padding: 0.5em 1em;
+    margin: 2em 2em;
+    font-weight: bold;
+    color: #6091d3;/*文字色*/
+    background: #FFF;
+    border: solid 3px #6091d3;/*線*/
+    border-radius: 10px;/*角の丸み*/
+}
+
+.today {
+  padding: 0 30px;
+  display: flex;
+  border-bottom: 1px solid #68d5e0;
+}
+
+.today .weather-icon {
+  font-size: 160px;
+  margin-left: 100px;
+}
+
+#current_date{
+  display: inline;
+  font-size: 50px;
+}
+#current_time{
+  display: inline;
+  font-size: 50px;
+}
+#location {
+  font-size: 50px;  
+  display: inline;
+}
+
+.today .weather-detail .current-temperature {
+  font-size: 50px;  
+  display: inline;
+}
+
+.today .weather-detail .temperature {
+  font-size: 40px;  
+  display: inline;
+}
+
+
+.today .weather-detail .weather-name {
+  font-size: 50px;  
+  display: inline;
+}
+
+span{
+  font-size: 50px;  
+}
+
+.today .weather-detail .rain-percent {
+  font-size: 50px;  
+}
+
+.today .weather-detail {
+  padding-left: 160px;
+  margin-left: 100px;
+}
+
+.day {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-size: 40px;
+}
+
+.time {
+  flex-grow: 1;
+  padding: 21px 9px;
+  text-align: center;
+  border-right: 1px solid #68d5e0;
+}
+
+.time:last-child {
+  border-right: 0;
+}
+
+.time .weather-icon {
+  margin: 5px 0;
+  color: #01373d;
+}
+
+.time .temperature {
+  font-size: 22px;
+}
