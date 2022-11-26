@@ -34,7 +34,7 @@ function CountDown(){
 }
 
 function jumpabe(){
-    location.assign("content.html");
+    location.assign("content.php");
 }
 </script>
 

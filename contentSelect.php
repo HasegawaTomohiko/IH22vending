@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 
+
+<?php
+  $product = $_GET['product'];
+  $url = 'buy_cardRead.php?product='.$product;
+?>
+
 <html lang="ja">
 
   <head>
@@ -20,10 +26,10 @@
       <h1>この商品を購入しますか？</h1>
       <div id="select">
       <div id="back">
-        <a href="content.html">戻る</a>
+        <a href="content.php">戻る</a>
       </div>
       <div id="buy">
-        <a href="buy.html">購入</a>
+        <a href= <?= $url ?>>購入</a>
       </div>
       </div>
     </div>
