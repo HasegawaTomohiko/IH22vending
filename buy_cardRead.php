@@ -26,6 +26,12 @@ let startButton = document.getElementById('start');
 let idmMessage = document.getElementById('idm');
 let waitingMessage = document.getElementById('waiting');
 
+//このこ
+let url = new URL(window.location.href);
+let params = url.searchParams;
+let product = params.get('product');
+//このこ
+
 async function sleep(msec) {
   return new Promise(resolve => setTimeout(resolve, msec));
 }
@@ -95,22 +101,42 @@ async function session(device) {
       }
       idmStr += idm[i].toString(16);
     }
+
+    /* ここからフォームを無理やり作成してpurchase.phpに無理やり突っ込んでまそ。 */
+    const form = document.createElement('form');
+    form.method = 'post';
+    form.action = 'buy.php';
+    const idm_field = document.createElement('input');
+    idm_field.type = 'hidden';
+    idm_field.name = 'IDm';
+    idm_field.value = idmStr;
+    const productid_field = document.createElement('input');
+    productid_field.type = 'hidden';
+    productid_field.name = 'productID';
+    productid_field.value = product;
+
+    form.appendChild(idm_field);
+    form.appendChild(productid_field);
+    document.body.appendChild(form);
+    form.submit();
+    /* ここまで */
+
     console.log(idmStr);
     idmMessage.innerText = "カードのIDm: " + idmStr;
     idmMessage.style.display = 'block';
     waitingMessage.style.display = 'none';
     //phpで読み込んだidmStrをpost送信させる。
 
-    let id = new FormData();
+    /* let id = new FormData();
     id.append('IDm',idmStr);
-    id.append('productID',params.get('product'));
-    let idm = new XMLHttpRequest();
-    idm.open('POST','purchase.php');
-    idm.send(id);
+    id.append('productID',product);
+    let alll = new XMLHttpRequest();
+    alll.open('POST','purchase.php');
+    alll.send(id); */
 
     } else {
-    idmMessage.style.display = 'none';
-    waitingMessage.style.display = 'block';
+      idmMessage.style.display = 'none';
+      waitingMessage.style.display = 'block';
   }
 }
 

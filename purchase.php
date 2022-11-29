@@ -6,24 +6,23 @@
 
     $pdo = db_connect();
 
-    $check_user = $pdo->prepare("Select * From user Where user_ID = :user_id");
+    $check_user = $pdo->prepare("Select IDm, balance From user Where IDm = :user_id");
     $check_user -> bindValue(':user_id', $IDm);
     $check_user -> execute();
-    $user = $check_user -> fetchAll(); //id,name,balance(残高)
+    $user = $check_user -> fetch(PDO::FETCH_ASSOC); //id,name,balance(残高)
 
-    $check_product = $pdo -> prepare("Select * From product Where product_ID = :product_id");
+    $check_product = $pdo -> prepare("Select product_ID, price, stock From product Where product_ID = :product_id");
     $check_product -> bindValue(':product_id',$productID);
     $check_product -> execute();
-    $product = $check_product -> fetchAll(); //id,name,price,stock
-
-    var_dump($user);
-    var_dump($product);
+    $product = $check_product -> fetch(PDO::FETCH_ASSOC); //id,name,price,stock
 
     if($user['balance'] <= $product['price']){
         echo "購入できませんでした";
-        location('./content.php');
     }
 
+    print_r($user);
+
+/*
     $update_userlog = $pdo -> prepare("insert into user_log (user_ID,command,point_balance) value (:user_id,:command,:balance)");
     $update_userlog -> bindValue(':user_id',$user['user_ID']);
     $update_userlog -> bindValue(':command','purchase');
@@ -44,9 +43,9 @@
     $update_product -> bindValue(':stock',$product['stock'] - 1);
     $update_product -> bindValue(':product_id',$product['product_ID']);
     $update_product -> execute();
-
-    location('./buy.php');    
-
+ */
     //purchase_log ログをInsert
     //product stockをupdate 1 2147483647
+
+    /* 別にこんな感じで別ファイルに置かなくても直接 buy.phpにこのプログラムを起動してそれぞれを実行させれば問題があれば適当に表示変えればいい説ない？*/
 ?>

@@ -26,6 +26,11 @@ let startButton = document.getElementById('start');
 let idmMessage = document.getElementById('idm');
 let waitingMessage = document.getElementById('waiting');
 
+/* ここにbuy_cardRead.phpと同じようなものを書く、それぐらいはおなしゃす(疲弊) */
+let url = new URL(window.location.href);
+let params = url.searchParams;
+let charge = params.get('charge');
+
 async function sleep(msec) {
   return new Promise(resolve => setTimeout(resolve, msec));
 }
@@ -101,12 +106,23 @@ async function session(device) {
     waitingMessage.style.display = 'none';
     //phpで読み込んだidmStrをpost送信させる。
 
-    let id = new FormData();
-    id.append('IDm',idmStr);
-    id.append('productID',params.get('product')); //get送信で選択金額を取得出来るようにする
-    let idm = new XMLHttpRequest();
-    idm.open('POST','purchase.php'); //charge_なんたら.phpにpost送信
-    idm.send(id);
+    /* buy_cardReadと同じことをしてほしい、チャージ金額とIDmをpost送信して処理をしてほしい。詳しいのはbuy_cardReadを見れば分かるはず */
+    const form = document.createElement('form');
+    form.method = 'post';
+    form.action = 'charge_complete.php';
+    const idm_field = document.createElement('input');
+    idm_field.type = 'hidden';
+    idm_field.name = 'IDm';
+    idm_field.value = idmStr;
+    const charge_field = document.createElement('input');
+    charge_field.type = 'hidden';
+    charge_field.name = 'charge';
+    charge_field.value = charge;
+
+    form.appendChild(idm_field);
+    form.appendChild(charge_field);
+    document.body.appendChild(form);
+    form.submit();
 
     } else {
     idmMessage.style.display = 'none';
