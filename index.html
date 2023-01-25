@@ -3,7 +3,7 @@
 
   <head>
 
-    <meta charset="utf-8">
+    <meta charset="utf-8">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
 
     <title>Prototype/ウェザーニュース</title>
 
@@ -39,6 +39,13 @@
           <div class="current-temperature">22°</div>
 <!-- 今の気温 -->
 
+
+<!-- 
+  const url = 'https://api.open-meteo.com/v1/forecast?latitude=35.18&longitude=136.91&hourly=temperature_2m,precipitation,weathercode&timezone=Asia%2FTokyo';
+
+
+  fetch(url).then(data => data.json()).then(json => console.log(json));
+ -->
 
           <div class="temperature">
 
@@ -164,5 +171,7 @@
       </ul>
     </div>
   </a>
+
+  <script src="./script/main.js"></script>
   </body>
 </html>

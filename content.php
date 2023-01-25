@@ -7,7 +7,7 @@
   $content = $pdo -> prepare("SELECT price, stock FROM product");
   $content -> execute();
   $content_product = $content -> fetchAll(PDO::FETCH_ASSOC);
-  
+
   print_r($content_product);
   print($content_product[0]['price']); //160
 
@@ -61,6 +61,22 @@
 
   <body>
 
+  <div id = "nav">
+    <nav class="cp_sidebarmenu">
+    <ul>
+      <li><a href="#"><i class="fa fa-home fa-2x fa-fw"></i><span>Menu1</span></a></li>
+      <li><a href="#"><i class="fa fa-file-text fa-2x fa-fw"></i><span>Menu2</span></a></li>
+      <li><a href="#"><i class="fa fa-comment fa-2x fa-fw"></i><span>Menu3</span></a></li>
+      <li><a href="#"><i class="fa fa-share-alt fa-2x fa-fw"></i><span>Menu4</span></a></li>
+    </ul>
+
+    <ul class="control">
+      <li><a href="#"><i class="fa fa-cog fa-2x fa-fw"></i><span>Menu</span></a></li>
+    </ul>
+    </nav>
+  </div>
+
+  <div id="content">
     <ul>
       <li>
         <a href="contentSelect.php?product=1">
@@ -142,6 +158,7 @@
         ?>
       </li>
     </ul>
+    </div>
 
     <div id="charge">
       <a href="charge_select.php">
