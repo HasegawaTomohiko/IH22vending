@@ -8,15 +8,16 @@
   color:#6091d3;
 }
 
-ul {
+/*　こいつらのせい  */
+#content ul {
   position:relative;
   left:200px;
   width:1100px;
-  margin:0.5rem;
+  margin:1rem;
   display: flex;
   flex-wrap: wrap;
 }
-  ul li{
+  #content ul li{
     list-style: none;
     text-align: center;
     width: calc(100% / 3);
@@ -26,7 +27,7 @@ ul {
     border: solid 3px #6091d3;
     border-radius: 10px;
   }
-    ul li img{
+    #content ul li img{
       height:400px;
     }
 
@@ -37,4 +38,76 @@ ul {
   right:100px;
   border: solid 3px #6091d3;
   border-radius: 10px;
+}
+
+#nav .cp_sidebarmenu {
+	position: fixed;
+	z-index: 1000;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	overflow: hidden;
+	width: 3.5em;
+	height: 100%;
+	-webkit-transition: width 0.6s ease;
+					transition: width 0.6s ease;
+	-webkit-transform: translateZ(0) scale(1,1);
+	border-right: 1px solid #e5e5e5;
+	background: #37474F;
+}
+#nav .cp_sidebarmenu:hover {
+	overflow: visible;
+	width: 17em;
+}
+#nav .cp_sidebarmenu ul {
+	margin: 7px 0;
+	padding: 0;
+	outline: 0;
+}
+#nav .cp_sidebarmenu li {
+	position: relative;
+	display: block;
+	width: 17em;
+	margin: 0;
+	padding: 0;
+	outline: 0;
+}
+#nav .cp_sidebarmenu li a {
+	position: relative;
+	display: table;
+	border-spacing: 0;
+	border-collapse: collapse;
+	text-decoration: none;
+	color: #ffffff;
+}
+#nav .cp_sidebarmenu li:before {
+	content:"";
+	position: absolute;
+	top: 0px;
+	left: -17em;
+	height: 100%;
+	width: 17em;
+	background : rgba(240,98,146 ,0.5);
+	-webkit-transition: all 0.6s ease;
+					transition: all 0.6s ease;
+}
+#nav .cp_sidebarmenu li:hover:before {
+	left:0;
+}
+#nav .cp_sidebarmenu span {
+	position: relative;
+	display: table-cell;
+	width: 14em;
+	vertical-align: middle;
+}
+#nav .cp_sidebarmenu > ul.control {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+#nav .cp_sidebarmenu ul li i {
+	font-size: 1.5em;
+	display: inline-block;
+	padding: 0.5em;
+	vertical-align: middle;
 }
