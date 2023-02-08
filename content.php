@@ -64,10 +64,10 @@
   <div id = "nav">
     <nav class="cp_sidebarmenu">
     <ul>
-      <li><a href="#"><i class="fa fa-home fa-2x fa-fw"></i><span>Menu1</span></a></li>
-      <li><a href="#"><i class="fa fa-file-text fa-2x fa-fw"></i><span>Menu2</span></a></li>
-      <li><a href="#"><i class="fa fa-comment fa-2x fa-fw"></i><span>Menu3</span></a></li>
-      <li><a href="#"><i class="fa fa-share-alt fa-2x fa-fw"></i><span>Menu4</span></a></li>
+      <li><a href="charge_select.php"><i class="fa fa-home fa-2x fa-fw"></i><span>カードチャージ</span></a></li>
+      <li><a href="register_user.php"><i class="fa fa-file-text fa-2x fa-fw"></i><span>カード登録</span></a></li>
+      <li><a href="#"><i class="fa fa-comment fa-2x fa-fw"></i><span>カード確認</span></a></li>
+      <li><a href="#"><i class="fa fa-share-alt fa-2x fa-fw"></i><span>管理者</span></a></li>
     </ul>
 
     <ul class="control">
