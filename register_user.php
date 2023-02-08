@@ -7,7 +7,7 @@
   <title>Prototype/登録</title>
 </head>
 <body>
-  <form action="register_cardRead.php" method="post">
+  <form action="register_cardRead.php" method="get">
     <label>
       ユーザー名:
       <input type="text" name="user_name" id="user_name" placeholder="ユーザー名">

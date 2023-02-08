@@ -21,8 +21,10 @@
 
     $sll = $check_IDm -> fetch(PDO::FETCH_ASSOC);
 
-    if(isset($ssl)){
-      $insert_card = $pdo -> prepare("insert into user (IDm,user_name) value (:user_idm,:user_name,)");
+    var_dump($sll);
+
+    if($sll === false){
+      $insert_card = $pdo -> prepare("insert into user (IDm,user_name) value (:user_idm,:user_name)");
       $insert_card -> bindValue(':user_idm',$idm);
       $insert_card -> bindValue(':user_name',$user);
       $insert_card -> execute();
