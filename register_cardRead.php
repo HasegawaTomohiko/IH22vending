@@ -1,3 +1,4 @@
+<!-- こいつ -->
 <!DOCTYPE html>
 <html lang="ja">
   <head>
@@ -5,13 +6,14 @@
     <title>Vending/card read</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.30/css/uikit.min.css" /> 
+    <link rel="stylesheet" href="./css/cardRead.css">
   </head>
   <body>
-    <div class="uk-container">
-      <button id="start" class="uk-button uk-button-large uk-button-default uk-width-1-1 uk-text-capitalize">FeliCaリーダーに接続</button>
-      <div id="waiting" class="uk-margin" style="display: none;">
-        <button class="uk-button uk-button-large uk-button-default uk-width-1-1" disabled>
-          <span uk-spinner="" class="uk-spinner uk-icon">
+    <div>
+      <button id="start" class="button_init">FeliCaリーダーに接続</button>
+      <div id="waiting" class="button_init" style="display: none;">
+        <button disabled>
+          <span class="uk-spinner uk-icon">
             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" ratio="1">
               <circle fill="none" stroke="#000" cx="15" cy="15" r="14"></circle>
             </svg>
@@ -19,7 +21,7 @@
           FeliCaリーダーにカードをかざしてください
         </button>
       </div>
-      <div id="idm" class="uk-alert uk-alert-success uk-text-center" uk-alert style="display: none;"></div>
+      <div id="idm" uk-alert style="display: none;"></div>
     </div>
     <script>
 let startButton = document.getElementById('start');

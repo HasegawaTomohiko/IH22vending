@@ -8,9 +8,6 @@
   $content -> execute();
   $content_product = $content -> fetchAll(PDO::FETCH_ASSOC);
 
-  print_r($content_product);
-  print($content_product[0]['price']); //160
-
   /* 
   Array ( 
     [0] => Array ( コカ・コーラ
@@ -64,8 +61,8 @@
   <div id = "nav">
     <nav class="cp_sidebarmenu">
     <ul>
-      <li><a href="charge_select.php"><i class="fa fa-home fa-2x fa-fw"></i><span>カードチャージ</span></a></li>
-      <li><a href="register_user.php"><i class="fa fa-file-text fa-2x fa-fw"></i><span>カード登録</span></a></li>
+      <li><img src="./images/20835-300x300.jpg" rel="a"><a href="charge_select.php"><i class="fa fa-home fa-2x fa-fw"></i><span>カードチャージ</span></a></li>
+      <li><img src="./images/" rel="a"><a href="register_user.php"><i class="fa fa-file-text fa-2x fa-fw"></i><span>カード登録</span></a></li>
       <li><a href="#"><i class="fa fa-comment fa-2x fa-fw"></i><span>カード確認</span></a></li>
       <li><a href="#"><i class="fa fa-share-alt fa-2x fa-fw"></i><span>管理者</span></a></li>
     </ul>

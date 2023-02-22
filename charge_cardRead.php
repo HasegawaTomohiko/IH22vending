@@ -1,3 +1,4 @@
+<!-- こいつ -->
 <!DOCTYPE html>
 <html lang="ja">
   <head>
@@ -8,7 +9,9 @@
   </head>
   <body>
     <div class="uk-container">
-      <button id="start" class="uk-button uk-button-large uk-button-default uk-width-1-1 uk-text-capitalize">FeliCaリーダーに接続</button>
+      <button id="start" class="uk-button uk-button-large uk-button-default uk-width-1-1 uk-text-capitalize">
+        FeliCaリーダーに接続
+      </button>
       <div id="waiting" class="uk-margin" style="display: none;">
         <button class="uk-button uk-button-large uk-button-default uk-width-1-1" disabled>
           <span uk-spinner="" class="uk-spinner uk-icon">

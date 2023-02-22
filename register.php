@@ -14,16 +14,9 @@
     $user = $_POST['user_name'];
 
     $pdo = db_connect();
+    $user = getUsers($idm,$pdo);
 
-    $check_IDm = $pdo -> prepare("select * from user Where IDm = :user_idm");
-    $check_IDm -> bindValue(':user_idm',$idm);
-    $check_IDm -> execute();
-
-    $sll = $check_IDm -> fetch(PDO::FETCH_ASSOC);
-
-    var_dump($sll);
-
-    if($sll === false){
+    if($user === false){
       $insert_card = $pdo -> prepare("insert into user (IDm,user_name) value (:user_idm,:user_name)");
       $insert_card -> bindValue(':user_idm',$idm);
       $insert_card -> bindValue(':user_name',$user);
