@@ -18,6 +18,12 @@
 
   <body>
 
+
+    <script type="javascript">
+      setInterval(()=>{
+        document.querySelector('#now').textContent = new Date().toLocaleString();
+        }, 100);
+    </script>
     <a href="content.php">
     <div class="weather">
 
@@ -31,8 +37,11 @@
 
         <div class="weather-detail">
 
-          <div id="current_date">9/12</div><!-- java date関数でやる -->
-          <div id="current_time">　00:00</div> <!-- 現在時刻-->
+          <!-- js リアルタイム表示 -->
+
+          <div id="current_date"><span id="month"></span>月</div><!-- java date関数でやる -->
+          <div id="current_date"><span id="text"></span>日</div><!-- java date関数でやる -->
+          <div id="current_time"><p id="sample"></p></div> <!-- 現在時刻-->
           <div id="location">　愛知県　名古屋市</div>
           <div class="weather-name">晴れ　</div>
           <!-- 現在の天気入れるやつ -->
@@ -40,12 +49,63 @@
 <!-- 今の気温 -->
 
 
-<!-- 
-  const url = 'https://api.open-meteo.com/v1/forecast?latitude=35.18&longitude=136.91&hourly=temperature_2m,precipitation,weathercode&timezone=Asia%2FTokyo';
+<script>
+
+  //つき
+  document.getElementById("month").innerHTML = showDay();
+  function showDay() {
+    var now = new Date();
+    var Month = now.getDate();
+    return day;
+  }
+
+  //ひづけ
+  document.getElementById("text").innerHTML = showDay();
+  function showDay() {
+    var now = new Date();
+    var day = now.getDate();
+    return day;
+  }
+
+  function zero( num) {
+    if (num < 10)  num = "0" + num   
+    return num;
+  }
+  
+  function nowTime() {
+    const date = new Date(); //現在日時
+    
+    const h = zero( date.getHours() );   //時
+    const m = zero( date.getMinutes() ); //分
+    const s = zero( date.getSeconds() ); //秒
+  
+    let weekday = new Array(7);
+    weekday[0] = "日";
+    weekday[1] = "月";
+    weekday[2] = "火";
+    weekday[3] = "水";
+    weekday[4] = "木";
+    weekday[5] = "金";
+    weekday[6] = "土";
+  
+    let n = weekday[date.getDay()];
+  
+    const now = `${h}:${m}:${s} (${n})`;
+  
+    document.getElementById("sample").innerHTML = now;
+    
+  }
+  setInterval('nowTime()', 1000);
 
 
-  fetch(url).then(data => data.json()).then(json => console.log(json));
- -->
+  //api
+  const url = '【https://api.open-meteo.com/v1/forecast?latitude=35.18&longitude=136.91&hourly=temperature_2m&timezone=Asia%2FTokyo】';
+
+
+  fetch(url)
+    .then(data => data.json())
+    .then(json => console.log(json))
+</script>
 
           <div class="temperature">
 
