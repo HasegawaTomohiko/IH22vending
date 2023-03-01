@@ -8,6 +8,7 @@
     <title>Prototype/ウェザーニュース</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css">
+
     <link rel="stylesheet" type="text/css" href="css/news.css">
 
   </head>
@@ -18,12 +19,6 @@
 
   <body>
 
-
-    <script type="javascript">
-      setInterval(()=>{
-        document.querySelector('#now').textContent = new Date().toLocaleString();
-        }, 100);
-    </script>
     <a href="content.php">
     <div class="weather">
 
@@ -39,82 +34,22 @@
 
           <!-- js リアルタイム表示 -->
 
-          <div id="current_date"><span id="month"></span>月</div><!-- java date関数でやる -->
-          <div id="current_date"><span id="text"></span>日</div><!-- java date関数でやる -->
+          <div id="current_date"><span id="month"></span>月</div><!-- js data関数でやる -->
+          <div id="current_date"><span id="text"></span>日</div><!-- js data関数でやる -->
           <div id="current_time"><p id="sample"></p></div> <!-- 現在時刻-->
           <div id="location">　愛知県　名古屋市</div>
           <div class="weather-name">晴れ　</div>
           <!-- 現在の天気入れるやつ -->
-          <div class="current-temperature">22°</div>
-<!-- 今の気温 -->
-
-
-<script>
-
-  //つき
-  document.getElementById("month").innerHTML = showDay();
-  function showDay() {
-    var now = new Date();
-    var Month = now.getDate();
-    return day;
-  }
-
-  //ひづけ
-  document.getElementById("text").innerHTML = showDay();
-  function showDay() {
-    var now = new Date();
-    var day = now.getDate();
-    return day;
-  }
-
-  function zero( num) {
-    if (num < 10)  num = "0" + num   
-    return num;
-  }
-  
-  function nowTime() {
-    const date = new Date(); //現在日時
-    
-    const h = zero( date.getHours() );   //時
-    const m = zero( date.getMinutes() ); //分
-    const s = zero( date.getSeconds() ); //秒
-  
-    let weekday = new Array(7);
-    weekday[0] = "日";
-    weekday[1] = "月";
-    weekday[2] = "火";
-    weekday[3] = "水";
-    weekday[4] = "木";
-    weekday[5] = "金";
-    weekday[6] = "土";
-  
-    let n = weekday[date.getDay()];
-  
-    const now = `${h}:${m}:${s} (${n})`;
-  
-    document.getElementById("sample").innerHTML = now;
-    
-  }
-  setInterval('nowTime()', 1000);
-
-
-  //api main.jsでやる
-  // const url = '【https://api.open-meteo.com/v1/forecast?latitude=35.18&longitude=136.91&hourly=temperature_2m&timezone=Asia%2FTokyo】';
-
-
-  // fetch(url)
-  //   .then(data => data.json())
-  //   .then(json => console.log(json))
-</script>
-
+          <div class="current-temperature"><p id="hourtemp"></p></div>
+          <!-- 今の気温 -->
           <div class="temperature">
-
-            <span>　27°</span>/<span>15°</span>
+            <!-- 最低気温 最高気温 -->
+            <span><p id="daymin"></p>　<p id="daymax"></p> </span>
 
           </div>
 
-          <!-- 雨確立 難しかったら消す -->
-          <div class="rain-percent">降水確率　5%</div>
+          <!-- 雨確立 難しかったら消す 多分open meteoじゃ降水確率とれない -->
+          <!-- <div class="rain-percent">降水確率　5%</div> -->
 
         </div>
 
@@ -131,10 +66,10 @@
             <i class="wi wi-day-sunny"></i>
 
           </div>
-<!-- 気温 -->
+<!-- 現在の気温だけ -->
           <div class="temperature">
 
-            <span>25°</span>/<span>21°</span>
+            <span><p id="temp6"></p></span>
 
           </div>
 
@@ -152,7 +87,7 @@
 
           <div class="temperature">
 
-            <span>22°</span>/<span>18°</span>
+            <span><p id="temp9"></p></span>
 
           </div>
 
@@ -170,7 +105,7 @@
 
           <div class="temperature">
 
-            <span>17°</span>/<span>12°</span>
+            <span><p id="temp12"></p></span>
 
           </div>
 
@@ -188,7 +123,7 @@
 
           <div class="temperature">
 
-            <span>15°</span>/<span>10°</span>
+            <span><p id="temp15"></p></span>
 
           </div>
 
@@ -206,7 +141,7 @@
 
           <div class="temperature">
 
-            <span>15°</span>/<span>12°</span>
+            <span><p id="temp18"></p></span>
 
           </div>
 
@@ -224,7 +159,7 @@
 
           <div class="temperature">
 
-            <span>28°</span>/<span>21°</span>
+            <span><p id="temp21"></p></span>
 
           </div>
         </li>
@@ -233,5 +168,65 @@
   </a>
 
   <script src="./script/main.js"></script>
+  <script>
+       //時間
+    //つき
+    document.getElementById("month").innerHTML = showMonth();
+  
+  function showMonth() {
+    var now = new Date();
+    var month = now.getMonth() + 1;
+    return month;
+  }
+  
+    //ひづけ
+    document.getElementById("text").innerHTML = showDay();
+    function showDay() {
+      var now = new Date();
+      var day = now.getDate();
+      return day;
+    }
+  
+    function zero( num) {
+      if (num < 10)  num = "0" + num   
+      return num;
+    }
+    
+    function nowTime() {
+      const date = new Date(); //現在日時
+      
+      const h = zero( date.getHours() );   //時
+      const m = zero( date.getMinutes() ); //分
+      const s = zero( date.getSeconds() ); //秒
+    
+      let weekday = new Array(7);
+      weekday[0] = "日";
+      weekday[1] = "月";
+      weekday[2] = "火";
+      weekday[3] = "水";
+      weekday[4] = "木";
+      weekday[5] = "金";
+      weekday[6] = "土";
+    
+      let n = weekday[date.getDay()];
+    
+      const now = `${h}:${m}:${s} (${n})`;
+    
+      document.getElementById("sample").innerHTML = now;
+      
+    }
+    setInterval('nowTime()', 1000);
+  
+  
+  </script>
+
+  <!-- <div class="weather-icon">
+
+  <i class="wi wi-day-sunny"></i>晴れ
+  <i class="wi wi-rain"></i>雨
+  <i class="wi wi-cloud"></i>曇り
+
+  </div> -->
+
   </body>
 </html>

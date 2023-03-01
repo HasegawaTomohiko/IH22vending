@@ -119,3 +119,11 @@ span{
 .time .temperature {
   font-size: 22px;
 }
+
+#daymax{
+  display:inline;
+}
+
+#daymin{
+  display:inline;
+}
