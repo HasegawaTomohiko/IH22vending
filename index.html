@@ -5,17 +5,23 @@
 
     <meta charset="utf-8">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
 
-    <title>Prototype/ウェザーニュース</title>
+    <title>ウェザーニュース</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css"> -->
+
+
+
+    <!-- google font -->
+    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 
     <link rel="stylesheet" type="text/css" href="css/news.css">
 
   </head>
-<!-- 上に文字 -->
-  <header>
+<!-- headerいらなくね -->
+  <!-- <header>
     <a class="title">ウェザーニュース </a>
-  </header>
+  </header> -->
 
   <body>
 
@@ -26,7 +32,9 @@
 
         <div class="weather-icon">
 
-          <i class="wi wi-day-sunny"></i>
+          <span class="material-symbols-outlined" style="font-size: 250px;">
+            clear_day
+            </span>
 
         </div>
 
@@ -37,14 +45,14 @@
           <div id="current_date"><span id="month"></span>月</div><!-- js data関数でやる -->
           <div id="current_date"><span id="text"></span>日</div><!-- js data関数でやる -->
           <div id="current_time"><p id="sample"></p></div> <!-- 現在時刻-->
-          <div id="location">　愛知県　名古屋市</div>
-          <div class="weather-name">晴れ　</div>
+          <div id="location">　愛知県　名古屋市</div><br>
+          <!-- <div class="weather-name">晴れ　</div> -->
           <!-- 現在の天気入れるやつ -->
-          <div class="current-temperature"><p id="hourtemp"></p></div>
+          <div class="current-temperature">気温　<p id="hourtemp" style="display: inline;"></p></div><br>
           <!-- 今の気温 -->
           <div class="temperature">
             <!-- 最低気温 最高気温 -->
-            <span><p id="daymin"></p>　<p id="daymax"></p> </span>
+            <span>最高気温/最低気温<br ><p id="daymax"></p>　<p id="daymin"></p></p> </span>
 
           </div>
 
@@ -63,7 +71,9 @@
 <!-- 時刻 6字から21字まで3時間ずつ -->
           <div class="weather-icon">
 <!-- 天気のアイコン↓ -->
-            <i class="wi wi-day-sunny"></i>
+<span class="material-symbols-outlined">
+  clear_day
+  </span>
 
           </div>
 <!-- 現在の気温だけ -->
@@ -81,7 +91,9 @@
 
           <div class="weather-icon">
 
-            <i class="wi wi-cloud"></i>
+            <span class="material-symbols-outlined">
+              clear_day
+              </span>
 
           </div>
 
@@ -99,7 +111,9 @@
 
           <div class="weather-icon">
 
-            <i class="wi wi-day-rain"></i>
+            <span class="material-symbols-outlined">
+              clear_day
+              </span>
 
           </div>
 
@@ -117,7 +131,9 @@
 
           <div class="weather-icon">
 
-            <i class="wi wi-rain"></i>
+            <span class="material-symbols-outlined">
+              clear_day
+              </span>
 
           </div>
 
@@ -135,7 +151,9 @@
 
           <div class="weather-icon">
 
-            <i class="wi wi-day-cloudy"></i>
+            <span class="material-symbols-outlined">
+              cloud
+              </span>
 
           </div>      
 
@@ -153,7 +171,9 @@
 
           <div class="weather-icon">
 
-            <i class="wi wi-day-sunny"></i>
+            <span class="material-symbols-outlined">
+              cloud
+              </span>
 
           </div>
 
@@ -225,6 +245,22 @@
   <i class="wi wi-day-sunny"></i>晴れ
   <i class="wi wi-rain"></i>雨
   <i class="wi wi-cloud"></i>曇り
+
+  </div> -->
+  
+  <!-- google font -->
+    <!-- <div class="weather-icon">
+
+            <span class="material-symbols-outlined">
+              clear_day
+              </span>//晴れ
+ <span class="material-symbols-outlined">
+rainy
+</span>//雨
+  <span class="material-symbols-outlined">
+cloud
+</span>
+//曇
 
   </div> -->
 

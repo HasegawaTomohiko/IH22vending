@@ -37,6 +37,11 @@
     const dailyMinTemperature = data.daily.temperature_2m_min[0];
     //console.log(hourlyTemp[0]);
     //console.log(dailyData);
+
+    //weathercode
+    const weathercode = data.hourly.weathercode;
+    console.log(weathercode);
+
     console.log(hourlyTemperature);
     document.getElementById("hourtemp").innerHTML = hourlyTemperature + '°';
 
@@ -61,64 +66,61 @@
 
 
 
-  //weathercode仕分け switch文
-  // switch文でweatherCodeを判別し、それに対応するテキストを表示する
-// switch(weatherCode) {
-//   case 0:
-//     console.log("Clear sky");
-//     break;
-//   case 1:
-//   case 2:
-//   case 3:
-//     console.log("Mainly clear, partly cloudy, and overcast");
-//     break;
-//   case 45:
-//   case 48:
-//     console.log("Fog and depositing rime fog");
-//     break;
-//   case 51:
-//   case 53:
-//   case 55:
-//     console.log("Drizzle: Light, moderate, and dense intensity");
-//     break;
-//   case 56:
-//   case 57:
-//     console.log("Freezing Drizzle: Light and dense intensity");
-//     break;
-//   case 61:
-//   case 63:
-//   case 65:
-//     console.log("Rain: Slight, moderate and heavy intensity");
-//     break;
-//   case 66:
-//   case 67:
-//     console.log("Freezing Rain: Light and heavy intensity");
-//     break;
-//   case 71:
-//   case 73:
-//   case 75:
-//     console.log("Snow fall: Slight, moderate, and heavy intensity");
-//     break;
-//   case 77:
-//     console.log("Snow grains");
-//     break;
-//   case 80:
-//   case 81:
-//   case 82:
-//     console.log("Rain showers: Slight, moderate, and violent");
-//     break;
-//   case 85:
-//   case 86:
-//     console.log("Snow showers: slight and heavy");
-//     break;
-//   case 95:
-//     console.log("Thunderstorm: Slight or moderate");
-//     break;
-//   case 96:
-//   case 99:
-//     console.log("Thunderstorm with slight and heavy hail");
-//     break;
-//   default:
-//     console.log("Invalid weather code");
-// }
+// weathercode仕分け switch文
+// switch文でweatherCodeを判別し、それに対応するテキストを表示する
+//https://fonts.google.com/icons?icon.query=weather
+switch(weatherCode) {
+  case 0:
+  case 1:
+  case 2:
+  case 3:
+    console.log("Mainly clear, partly cloudy, and overcast");//晴れ
+    break;
+  case 45:
+  case 48:
+    console.log("Fog and depositing rime fog");
+    break;
+  case 51:
+  case 53:
+  case 55:
+    console.log("Drizzle: Light, moderate, and dense intensity");
+    break;
+  case 56:
+  case 57:
+    console.log("Freezing Drizzle: Light and dense intensity");
+    break;
+  case 61:
+  case 63:
+  case 65:
+  case 66:
+  case 67:
+    console.log("Freezing Rain: Light and heavy intensity");//雨
+    break;
+  case 71:
+  case 73:
+  case 75:
+    console.log("Snow fall: Slight, moderate, and heavy intensity");
+    break;
+  case 77:
+    console.log("Snow grains");
+    break;
+  case 80:
+  case 81:
+  case 82:
+    console.log("Rain showers: Slight, moderate, and violent");
+    break;
+  case 85:
+  case 86:
+    console.log("Snow showers: slight and heavy");
+    break;
+  case 95:
+    console.log("Thunderstorm: Slight or moderate");
+    break;
+  case 96:
+  case 99:
+    console.log("Thunderstorm with slight and heavy hail");
+    break;
+  default:
+    console.log("Invalid weather code");
+}
 

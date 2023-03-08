@@ -3,10 +3,10 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP');
 /* フォント */
 
-header {
+/* header {
 
   padding: 15px;
-}
+} */
 
 a {
   color: #6091d3;
@@ -18,7 +18,7 @@ a {
 
 
 body {
-  margin: 0;
+  margin-top: -170px;
   padding: auto;
 }
 
@@ -40,13 +40,14 @@ body {
 }
 
 .today {
-  padding: 0 30px;
+
   display: flex;
   border-bottom: 1px solid #68d5e0;
 }
 
+/* 今日の天気表示 */
 .today .weather-icon {
-  font-size: 160px;
+  margin: auto;
   margin-left: 100px;
 }
 
@@ -84,7 +85,7 @@ span{
 }
 
 .today .weather-detail .rain-percent {
-  font-size: 50px;  
+  font-size: 30px;  
 }
 
 .today .weather-detail {
@@ -94,8 +95,8 @@ span{
 
 .day {
   display: flex;
-  padding: 0;
-  margin: 0;
+  /* padding: 0;
+  margin: 0; */
   list-style: none;
   font-size: 40px;
 }
@@ -105,6 +106,7 @@ span{
   padding: 21px 9px;
   text-align: center;
   border-right: 1px solid #68d5e0;
+  margin-top: -50px;
 }
 
 .time:last-child {
@@ -113,11 +115,13 @@ span{
 
 .time .weather-icon {
   margin: 5px 0;
-  color: #01373d;
+  margin-bottom: -80px;
+  color: #6091d3;/*文字色*/
 }
 
 .time .temperature {
   font-size: 22px;
+  margin-bottom: -100px;
 }
 
 #daymax{
@@ -127,3 +131,14 @@ span{
 #daymin{
   display:inline;
 }
+
+/* アイコン */
+
+
+.material-symbols-outlined {
+  font-size: 80px;
+}
+
+/* span{
+  margin-bottom: -100px;
+} */
